@@ -137,6 +137,7 @@ EXPORT_DEF int at_enqueue_initialization(struct cpvt *cpvt, at_cmd_t from_comman
 	static const char cmd22[] = "AT+CPMS=\"SM\",\"SM\",\"SM\"\r";
 	static const char cmd23[] = "AT+CNMI=2,1,0,2,0\r";
 	static const char cmd24[] = "AT+CSQ\r";
+	static const char cmd25[] = "AT$QCPBMPREF=1\r";
 
 	static const at_queue_cmd_t st_cmds[] = {
 		ATQ_CMD_DECLARE_ST(CMD_AT, cmd_at),
@@ -156,6 +157,7 @@ EXPORT_DEF int at_enqueue_initialization(struct cpvt *cpvt, at_cmd_t from_comman
 
 		ATQ_CMD_DECLARE_STI(CMD_AT_CREG_INIT,cmd14),	/* GSM registration status setting */
 		ATQ_CMD_DECLARE_ST(CMD_AT_CREG, cmd15),		/* GSM registration status */
+		ATQ_CMD_DECLARE_STI(CMD_AT_CNUM_GET, cmd25),
 		ATQ_CMD_DECLARE_STI(CMD_AT_CNUM, cmd16),		/* Get Subscriber number */
 		ATQ_CMD_DECLARE_ST(CMD_AT_CVOICE, cmd17),	/* read the current voice mode, and return sampling rate、data bit、frame period */
 
